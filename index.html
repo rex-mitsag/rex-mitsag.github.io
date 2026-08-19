@@ -28,9 +28,8 @@
         <a href="#work">Work</a>
         <a href="#skills">Skills</a>
         <a
-          href="https://drive.google.com/file/d/11-hY329PAuitOsuDk3mlmDRYHqPyPELC/view?usp=drive_link"
-          target="_blank"
-          rel="noopener"
+          href="#"
+          id="resume-link"
           class="btn btn-primary"
         >Resume</a>
         <a href="#contact">Contact</a>
@@ -260,6 +259,18 @@
       </div>
     </section>
   </main>
+
+  <!-- Resume Viewer -->
+  <div id="resume-modal" class="resume-modal" aria-hidden="true">
+    <div class="resume-viewer" role="dialog" aria-modal="true" aria-label="Resume">
+      <button id="resume-close" class="resume-close" aria-label="Close resume">&times;</button>
+      <iframe
+        src="https://drive.google.com/file/d/11-hY329PAuitOsuDk3mlmDRYHqPyPELC/preview"
+        title="Sagnik Mitra Resume"
+        class="resume-frame">
+      </iframe>
+    </div>
+  </div>
 
   <footer class="footer container">
     <span>© <span id="year"></span> Sagnik Mitra</span>

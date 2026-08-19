@@ -34,3 +34,38 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+const resumeLink = document.getElementById("resume-link");
+const resumeModal = document.getElementById("resume-modal");
+const resumeClose = document.getElementById("resume-close");
+
+function openResume() {
+    resumeModal.classList.add("active");
+    resumeModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+}
+
+function closeResume() {
+    resumeModal.classList.remove("active");
+    resumeModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+}
+
+resumeLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    openResume();
+});
+
+resumeClose.addEventListener("click", closeResume);
+
+resumeModal.addEventListener("click", function (event) {
+    if (event.target === resumeModal) {
+        closeResume();
+    }
+});
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && resumeModal.classList.contains("active")) {
+        closeResume();
+    }
+});
