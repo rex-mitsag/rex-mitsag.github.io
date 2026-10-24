@@ -174,11 +174,14 @@ pre { margin: 0; padding: 30px 26px 34px; overflow-x: auto; font: 500 .88rem/2 "
 .project-card:not(.featured) h3 { font-size: 1.55rem; margin-top: 110px; }
 .project-card p { color: var(--muted); margin: 0 0 22px; }
 .project-stack { margin-top: auto; }
+.project-checks { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 9px; color: var(--muted); font-size: .9rem; }
+.project-checks li { padding-left: 18px; position: relative; }
+.project-checks li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 1px; background: var(--accent); }
 .project-note { color: var(--muted); font-size: .72rem; margin-top: 18px; opacity: .8; }
 
-.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
-.skill-group { padding: 28px 22px 30px 0; border-right: 1px solid var(--line); }
-.skill-group:not(:first-child) { padding-left: 22px; }
+.skills-grid { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); }
+.skill-group { padding: 28px 18px 30px 0; border-right: 1px solid var(--line); }
+.skill-group:not(:first-child) { padding-left: 18px; }
 .skill-group:last-child { border-right: 0; }
 .skill-index { color: var(--accent); font: .7rem "SFMono-Regular", Consolas, monospace; }
 .skill-group h3 { font-size: 1.2rem; margin: 22px 0 9px; }
@@ -216,8 +219,10 @@ pre { margin: 0; padding: 30px 26px 34px; overflow-x: auto; font: 500 .88rem/2 "
   .project-card.featured { grid-row: auto; min-height: 440px; }
   .project-card:not(.featured) h3 { margin-top: 80px; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .skill-group:nth-child(2) { border-right: 0; }
-  .skill-group:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .skill-group, .skill-group:not(:first-child) { padding: 28px 18px 30px 0; border-right: 1px solid var(--line); }
+  .skill-group:nth-child(even) { border-right: 0; padding-left: 22px; }
+  .skill-group:nth-child(-n+4) { border-bottom: 1px solid var(--line); }
+  .skill-group:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0; }
   .contact-box { flex-direction: column; align-items: start; padding: 34px; }
 }
 
